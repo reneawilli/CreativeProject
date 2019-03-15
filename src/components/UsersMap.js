@@ -2,6 +2,18 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import  MapView from 'react-native-maps';
 
+const styles = StyleSheet.create({
+  mapContainer: {
+    width:  '100%',
+    height:  200,
+    marginTop:  20,
+  },
+  map: {
+    width:  '100%',
+    height:  '100%',
+  },
+});
+
 const usersMap = props => {
     let userLocationMarker = null;
 
@@ -28,17 +40,5 @@ const usersMap = props => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  mapContainer: {
-    width:  '100%',
-    height:  200,
-    marginTop:  20,
-  },
-  map: {
-    width:  '100%',
-    height:  '100%',
-  },
-});
 
 export default usersMap;
