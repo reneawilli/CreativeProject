@@ -6,6 +6,7 @@ import InspireView from '../views/inspireView';
 import LoveView from '../views/loveView';
 import MapView from '../views/mapView';
 import AwesomePlaceView from '../views/awesomePlaceView';
+import ToDosView from '../views/toDosView';
 
 const HomeTabNavigator = createMaterialTopTabNavigator(
   {
@@ -14,10 +15,11 @@ const HomeTabNavigator = createMaterialTopTabNavigator(
     Love: LoveView,
     Map: MapView,  
     Places:  AwesomePlaceView,
+    ToDos:  ToDosView,
 },
 {
   initialRouteName: 'Hope',
-  order: ['Hope', 'Inspire', 'Love', 'Map', 'Places'],
+  order: ['Hope', 'Inspire', 'Love', 'Map', 'Places', 'ToDos'],
   backBehavior: 'initialRoute',
   swipeEnabled: true,
 });

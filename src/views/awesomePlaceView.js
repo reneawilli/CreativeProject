@@ -26,32 +26,32 @@ class AwesomePlaceView extends React.Component {
         places: prevState.places.concat({
           key: Math.random(),
           name: placeName,
-          image: placeImage 
+          image: placeImage
         })
       };
     });
   };
 
-placeDeletedHandler = key => {
-  this.setState(prevState => {
-    return {
-      places: prevState.places.filter(place => {
-        return place.key !== key;
-      })
-    };
-  });
-};
+  placeDeletedHandler = key => {
+    this.setState(prevState => {
+      return {
+        places: prevState.places.filter(place => {
+          return place.key !== key;
+        })
+      };
+    });
+  };
 
-render() {
-  return (
-    <View style={styles.container}>
-      <PlaceInput onPlaceAdded={this.placeAddedHandler} />
-      <PlaceList places={this.state.places}
-        onItemDeleted={this.placeDeletedHandler}
-      />
-    </View>
-  );
-}
+  render() {
+    return (
+      <View style={styles.container}>
+        <PlaceInput onPlaceAdded={this.placeAddedHandler} />
+        <PlaceList places={this.state.places}
+          onItemDeleted={this.placeDeletedHandler}
+        />
+      </View>
+    );
+  }
 }
 
 export default AwesomePlaceView;
