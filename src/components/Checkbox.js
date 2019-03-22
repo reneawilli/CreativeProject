@@ -8,7 +8,7 @@ import checkmark from '../assets/checkmark.png';
 const { width } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
-  box: {
+  container: {
     alignItems: 'center',
     borderColor: colors.grey,
     borderRadius: 3,
@@ -24,7 +24,7 @@ const Checkbox = (props) => {
 
   return (
     <TouchableOpacity onPress={handlePress}>
-      <View style={styles.box}>
+      <View style={styles.container}>
         {checked && <Image source={checkmark} />}
       </View>
     </TouchableOpacity>

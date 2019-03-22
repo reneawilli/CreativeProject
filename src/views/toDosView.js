@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ThingsToDo from '../components/ThingsToDo';
+import ToDoItem from '../components/ToDoItem';
 
 class ToDosView extends Component {
   state = {
@@ -12,7 +13,7 @@ class ToDosView extends Component {
       {
         id: 2,
         title: "A Wrinkle in Time",
-        completed: true,
+        completed: false,
       },
       {
         id: 3,
@@ -22,9 +23,23 @@ class ToDosView extends Component {
     ]
   }
 
+//Toggle Complete
+  markComplete = (id) => {
+    this.setState({
+      todos: this.state.todos.map(todo => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed
+          console.log(todo.completed);
+        }
+        return todo;
+      })
+    });
+  }
+
   render() {
     return (
-      <ThingsToDo todos={this.state.todos}/>
+      <ThingsToDo todos={this.state.todos}
+        markComplete={this.markComplete} />
     );
   }
 }
